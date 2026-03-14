@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#1152d4",
+                        "on-primary-container": "#1e40af",
+                        "surface-variant": "#f1f5f9",
+                        "primary": "#1152d4",
+                        "error-container": "#fee2e2",
+                        "secondary": "#475569",
+                        "tertiary": "#0f172a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#d9dae3",
+                        "on-surface": "#0f172a",
+                        "surface-container-low": "#f0f1f5",
+                        "error": "#ef4444",
+                        "outline": "#cbd5e1",
+                        "on-tertiary-container": "#f8fafc",
+                        "secondary-fixed-dim": "#e2e8f0",
+                        "on-primary-fixed-variant": "#1d4ed8",
+                        "on-secondary-fixed": "#0f172a",
+                        "primary-fixed-dim": "#bfdbfe",
+                        "inverse-on-surface": "#f1f5f9",
+                        "on-secondary-container": "#1e293b",
+                        "outline-variant": "#e2e8f0",
+                        "on-tertiary-fixed-variant": "#1e293b",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e1e2e9",
+                        "on-primary-fixed": "#1e3a8a",
+                        "inverse-primary": "#93c5fd",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#991b1b",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e2e8f0",
+                        "surface-container": "#e8e9ef",
+                        "surface-bright": "#ffffff",
+                        "on-tertiary-fixed": "#020617",
+                        "on-secondary-fixed-variant": "#334155",
+                        "background": "#f6f6f8",
+                        "on-background": "#0f172a",
+                        "surface-dim": "#d9d9e4",
+                        "tertiary-fixed-dim": "#cbd5e1",
+                        "tertiary-container": "#334155",
+                        "on-surface-variant": "#475569",
+                        "inverse-surface": "#1e293b",
+                        "secondary-container": "#f1f5f9",
+                        "primary-fixed": "#dbeafe",
+                        "primary-container": "#dbeafe",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f6f6f8",
+                        "secondary-fixed": "#f1f5f9"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen">
+    <aside class="w-64 bg-surface-container-lowest border-r border-outline-variant flex flex-col fixed h-full z-20">
+        <div class="p-4 flex flex-col gap-1 border-b border-outline-variant">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-xl">school</span>
+                </div>
+                <div>
+                    <h1 class="text-xs font-bold text-on-surface leading-tight">NEU Library Admin</h1>
+                </div>
+            </div>
+        </div>
+        <nav class="px-2 pt-4 pb-2 space-y-1">
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary transition-colors" href="#">
+                <span class="material-symbols-outlined text-xl" data-icon="school">school</span>
+                <span class="text-xs font-bold">Student Dashboard</span>
+            </a>
+            <a onclick="location.href='edashboard.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+                <span class="material-symbols-outlined text-xl" data-icon="badge">badge</span>
+                <span class="text-xs font-medium">Employee Dashboard</span>
+            </a>
+        </nav>
+        <div class="flex-1"></div>
+        <div class="px-4 py-2 border-t border-outline-variant">
+            <a onclick="location.href='admin.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg text-error hover:bg-error-container transition-colors" href="#">
+                <span class="material-symbols-outlined text-xl" data-icon="logout">logout</span>
+                <span class="text-xs font-medium">Logout</span>
+            </a>
+        </div>
+    </aside>
+    <main class="flex-1 ml-64 flex flex-col">
+        <header class="h-16 bg-surface-bright border-b border-outline-variant px-8 flex items-center justify-between sticky top-0 z-10">
+            <div class="flex items-center gap-4">
+                <h2 class="text-lg font-bold text-on-surface uppercase tracking-tight">Student Activity Dashboard</h2>
+            </div>
+            <div class="flex items-center gap-4">
+            
+                <div class="flex items-center gap-3">
+                    <span class="text-sm font-semibold text-on-surface">Admin</span>
+                </div>
+                <div class="bg-primary/10 rounded-full size-10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary">account_circle</span>
+                    </div>
+            </div>
+        </header>
+        <div class="p-8 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant shadow-sm flex flex-col justify-between h-48 group">
+                    <div>
+                        <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">Student Visits Today</p>
+                        <h3 id="countToday" class="text-5xl font-black text-on-surface tracking-tighter">0</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold text-primary cursor-default opacity-70">View Trends</span>
+                        <span class="material-symbols-outlined text-primary/20 text-4xl" data-icon="today">today</span>
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant shadow-sm flex flex-col justify-between h-48 group">
+                    <div>
+                        <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">Student visits This Month</p>
+                        <h3 id="countMonth" class="text-5xl font-black text-on-surface tracking-tighter">0</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold text-primary cursor-default opacity-70">View Trends</span>
+                        <span class="material-symbols-outlined text-primary/20 text-4xl" data-icon="calendar_month">calendar_month</span>
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant shadow-sm flex flex-col justify-between h-48 group relative">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">Custom Range Student visits</p>
+                            <input id="customDateInput" class="text-[10px] border-outline-variant rounded p-1 bg-surface-container-low focus:ring-primary focus:border-primary" type="date">
+                        </div>
+                        <h3 id="countCustom" class="text-5xl font-black text-on-surface tracking-tighter">0</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold text-primary cursor-default opacity-70">View Trends</span>
+                        <span class="material-symbols-outlined text-primary/20 text-4xl" data-icon="date_range">date_range</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-surface-container-lowest border border-outline-variant p-4 rounded-2xl shadow-sm">
+                    <div class="flex items-center gap-4 bg-surface-container-low border border-outline-variant px-4 py-3 rounded-xl">
+                        <span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+                        <input id="searchInput" class="bg-transparent border-none text-sm w-full focus:ring-0 placeholder:text-on-surface-variant/60" placeholder="Search by Student ID, Name, Email, College Program, Purpose of Visit, Date, or Time..." type="text">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-surface-container-lowest border border-outline-variant rounded-2xl overflow-hidden shadow-sm">
+                <div class="px-6 py-4 border-b border-outline-variant flex justify-between items-center bg-surface-bright">
+                    <h3 class="font-bold text-on-surface flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-sm">history</span>
+                        Real-time Student Activity
+                    </h3>
+                    <button class="text-xs font-bold text-primary flex items-center gap-1 hover:underline">
+                        <span class="material-symbols-outlined text-sm">download</span> Export List
+                    </button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-surface-container-low border-b border-outline-variant">
+                                <th class="px-6 py-4 text-xs font-black text-on-surface-variant uppercase tracking-widest">Student ID</th>
+                                <th class="px-6 py-4 text-xs font-black text-on-surface-variant uppercase tracking-widest">Student Name</th>
+                                <th class="px-6 py-4 text-xs font-black text-on-surface-variant uppercase tracking-widest">Email Address</th>
+                                <th class="px-6 py-4 text-xs font-black text-on-surface-variant uppercase tracking-widest">College Program</th>
+                                <th class="px-6 py-4 text-xs font-black text-on-surface-variant uppercase tracking-widest">Purpose of Visit</th>
+                                <th class="px-6 py-4 text-xs font-black text-on-surface-variant uppercase tracking-widest">Login Date & Time</th>
+                                <th class="px-6 py-4 text-xs font-black text-on-surface-variant uppercase tracking-widest text-center">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="activityTableBody" class="divide-y divide-outline-variant/30 bg-surface-container-lowest">
+    
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+<script>
+// Keep a copy of all visits so the custom date filter and search works without reloading the database
+let allVisitsData = [];
+
+document.addEventListener("DOMContentLoaded", function() {
+    loadStudentActivity();
+});
+
+// Extracted the table rendering logic into its own function so we can call it when searching
+function renderTableData(dataArray) {
+    const tableBody = document.getElementById("activityTableBody");
+    tableBody.innerHTML = "";
+
+    if (dataArray.length === 0) {
+        // Updated colspan to 7 to match the new Actions column
+        tableBody.innerHTML = `<tr><td colspan="7" class="px-6 py-5 text-center text-sm text-on-surface-variant">No results found.</td></tr>`;
+        return;
+    }
+
+    dataArray.forEach(visit => {
+        let row = `
+            <tr class="hover:bg-surface-container-low/50 transition-colors">
+                <td class="px-6 py-5 text-sm font-bold text-secondary">${visit.studentId || ''}</td>
+                <td class="px-6 py-5">
+                    <span class="text-sm font-bold text-on-surface">${visit.fullName || ''}</span>
+                </td>
+                <td class="px-6 py-5 text-sm text-on-surface-variant">${visit.email || ''}</td>
+                <td class="px-6 py-5 text-sm font-medium text-on-surface-variant">${visit.program || ''}</td>
+                <td class="px-6 py-5 text-sm text-on-surface-variant">${visit.purpose || ''}</td>
+                <td class="px-6 py-5 text-sm font-medium">${visit.visitDate || ''} · ${visit.visitTime || ''}</td>
+                <td class="px-6 py-5 text-sm font-medium flex justify-center">
+                    <button onclick="blockStudent('${visit.studentId}')" class="px-3 py-1.5 bg-error/10 text-error rounded-md hover:bg-error hover:text-on-error transition-colors flex items-center gap-1 text-xs font-bold border border-error/20 hover:border-error">
+                        <span class="material-symbols-outlined text-[16px]">block</span> Block
+                    </button>
+                </td>
+            </tr>
+        `;
+        tableBody.innerHTML += row;
+    });
+}
+
+function loadStudentActivity() {
+    fetch('http://localhost:8080/api/visits')
+        .then(response => response.json())
+        .then(data => {
+            
+            // NEW: Sort the data from newest to oldest
+            data.sort((a, b) => {
+                // Combine date and time into a single string to create a valid Date object
+                // Adding a fallback to empty strings prevents errors if a value is missing
+                const dateStrA = `${a.visitDate || ''}T${a.visitTime || ''}`;
+                const dateStrB = `${b.visitDate || ''}T${b.visitTime || ''}`;
+                
+                const timeA = new Date(dateStrA).getTime();
+                const timeB = new Date(dateStrB).getTime();
+
+                // Handle any invalid dates by pushing them to the bottom
+                if (isNaN(timeA)) return 1;
+                if (isNaN(timeB)) return -1;
+
+                // Sort descending (newest first)
+                return timeB - timeA;
+            });
+
+            allVisitsData = data; // Save data for our date picker and search
+            
+            // 1. Initial Render of the table
+            renderTableData(allVisitsData);
+
+            // 2. Counters for our dashboard cards
+            let todayCount = 0;
+            let monthCount = 0;
+
+            // Get today's actual date to compare against
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const currentMonth = now.getMonth();
+            const currentDate = now.getDate();
+
+            data.forEach(visit => {
+                if (visit.visitDate) {
+                    const vDate = new Date(visit.visitDate);
+                    // Check if the visit date is valid
+                    if (!isNaN(vDate.getTime())) {
+                        // Is it this month?
+                        if (vDate.getFullYear() === currentYear && vDate.getMonth() === currentMonth) {
+                            monthCount++;
+                            // Is it today?
+                            if (vDate.getDate() === currentDate) {
+                                todayCount++;
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 3. Push the calculated numbers to the HTML
+            document.getElementById('countToday').innerText = todayCount;
+            document.getElementById('countMonth').innerText = monthCount;
+            
+            // Set custom count to total visits by default until they pick a date
+            document.getElementById('countCustom').innerText = data.length;
+        })
+        .catch(error => console.error('Error loading data:', error));
+}
+
+// Function to handle blocking a student
+function blockStudent(studentId) {
+    // Confirm with the admin before blocking
+    if(confirm(`Are you sure you want to block the student with ID: ${studentId}?`)) {
+        
+        // Send request to your backend to block the user
+        fetch(`http://localhost:8080/api/students/${studentId}/block`, {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+            if(response.ok) {
+                alert(`Student ID ${studentId} has been blocked successfully.`);
+                // Refresh the table to reflect the changes
+                loadStudentActivity(); 
+            } else {
+                alert(`Failed to block student ID ${studentId}.`);
+            }
+        })
+        .catch(error => {
+            console.error('Error blocking student:', error);
+            alert('An error occurred while communicating with the server.');
+        });
+    }
+}
+
+// 4. Listen for when the Admin picks a date in the Custom Date box
+document.getElementById('customDateInput').addEventListener('change', function(event) {
+    const selectedDateStr = event.target.value; // Format is YYYY-MM-DD
+    
+    // If they clear the date box, just show total visits again
+    if (!selectedDateStr) {
+        document.getElementById('countCustom').innerText = allVisitsData.length;
+        return;
+    }
+
+    const selectedDate = new Date(selectedDateStr);
+    let customCount = 0;
+
+    // Loop through our saved data and count matches
+    allVisitsData.forEach(visit => {
+        const vDate = new Date(visit.visitDate);
+        if (!isNaN(vDate.getTime())) {
+            if (vDate.getFullYear() === selectedDate.getFullYear() &&
+                vDate.getMonth() === selectedDate.getMonth() &&
+                vDate.getDate() === selectedDate.getDate()) {
+                customCount++;
+            }
+        }
+    });
+
+    // Update the custom box with the new count!
+    document.getElementById('countCustom').innerText = customCount;
+});
+
+// 5. Search functionality
+document.getElementById('searchInput').addEventListener('input', function(event) {
+    const searchTerm = event.target.value.toLowerCase().trim();
+    
+    // If search is empty, show all data
+    if (!searchTerm) {
+        renderTableData(allVisitsData);
+        return;
+    }
+
+    // Filter the stored array based on multiple fields
+    const filteredData = allVisitsData.filter(visit => {
+        return (
+            (visit.studentId && visit.studentId.toString().toLowerCase().includes(searchTerm)) ||
+            (visit.fullName && visit.fullName.toLowerCase().includes(searchTerm)) ||
+            (visit.email && visit.email.toLowerCase().includes(searchTerm)) ||
+            (visit.program && visit.program.toLowerCase().includes(searchTerm)) ||
+            (visit.purpose && visit.purpose.toLowerCase().includes(searchTerm)) ||
+            (visit.visitDate && visit.visitDate.toLowerCase().includes(searchTerm)) ||
+            (visit.visitTime && visit.visitTime.toLowerCase().includes(searchTerm))
+        );
+    });
+
+    // Render the newly filtered array
+    renderTableData(filteredData);
+});
+</script>
+
+</body>
+</html>
