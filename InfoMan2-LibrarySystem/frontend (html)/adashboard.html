@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Admin Dashboard - NEU Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#0A3F6B",
+              "on-primary-container": "#0A3F6B",
+              "surface-variant": "#E8F0F7",
+              "primary": "#0A3F6B",
+              "error-container": "#fee2e2",
+              "secondary": "#041A2D",
+              "tertiary": "#041A2D",
+              "on-tertiary": "#E8F0F7",
+              "surface-container-highest": "#d9dae3",
+              "on-surface": "#041A2D",
+              "surface-container-low": "#E8F0F7",
+              "error": "#ef4444",
+              "outline": "#0A3F6B",
+              "on-tertiary-container": "#E8F0F7",
+              "secondary-fixed-dim": "#e2e8f0",
+              "on-primary-fixed-variant": "#0A3F6B",
+              "on-secondary-fixed": "#041A2D",
+              "primary-fixed-dim": "#bfdbfe",
+              "inverse-on-surface": "#E8F0F7",
+              "on-secondary-container": "#041A2D",
+              "outline-variant": "#D1E0EF",
+              "on-tertiary-fixed-variant": "#041A2D",
+              "on-secondary": "#ffffff",
+              "surface-container-high": "#e1e2e9",
+              "on-primary-fixed": "#0A3F6B",
+              "inverse-primary": "#93c5fd",
+              "on-primary": "#ffffff",
+              "on-error-container": "#991b1b",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#e2e8f0",
+              "surface-container": "#e8e9ef",
+              "surface-bright": "#E8F0F7",
+              "on-tertiary-fixed": "#020617",
+              "on-secondary-fixed-variant": "#334155",
+              "background": "#E8F0F7",
+              "on-background": "#041A2D",
+              "surface-dim": "#d9d9e4",
+              "tertiary-fixed-dim": "#cbd5e1",
+              "tertiary-container": "#334155",
+              "on-surface-variant": "#041A2D",
+              "inverse-surface": "#1e293b",
+              "secondary-container": "#f1f5f9",
+              "primary-fixed": "#dbeafe",
+              "primary-container": "#dbeafe",
+              "surface-container-lowest": "#ffffff",
+              "surface": "#E8F0F7",
+              "secondary-fixed": "#f1f5f9"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+    <nav class="h-16 flex items-center justify-between px-8 border-b border-outline-variant sticky top-0 z-50 bg-white">
+        <div class="flex items-center gap-4">
+            <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined text-white text-xl" data-icon="account_balance">account_balance</span>
+            </div>
+            <span class="font-headline font-extrabold text-xl tracking-tighter text-on-background">NEU Library</span>
+        </div>
+        <div class="flex items-center gap-8">
+                    <nav class="hidden md:flex items-center gap-9">
+                        <a onclick="location.href='index.html'" class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="index.html">Home</a>
+                        <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Services</a>
+                        <a class="text-slate-700 dark:text-slate-300 text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
+                    </nav>
+                    <div class="bg-primary/10 rounded-full size-10 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary">account_circle</span>
+                    </div>
+                </div>
+    </nav>
+    <main class="flex-grow flex flex-col items-center justify-center p-6 md:p-12">
+        <div class="text-center mb-12 max-w-2xl">
+            <h1 class="text-4xl md:text-5xl font-headline font-black text-on-background tracking-tight mb-4">
+                Admin Dashboard
+            </h1>
+            <p class="text-on-surface-variant opacity-80 text-base leading-relaxed">
+                Welcome, Library Admin. Select an environment to begin managing institutional records, resources, and accessibility.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-5xl">
+            <a onclick="location.href='sdashboard.html'" class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-all flex flex-col h-full shadow-sm hover:shadow-md" href="#">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                    <span class="material-symbols-outlined text-primary text-xl group-hover:text-white" data-icon="school">school</span>
+                </div>
+                <h2 class="text-lg font-headline font-bold text-on-background mb-2">Student Dashboard</h2>
+                <p class="text-on-surface-variant/80 text-sm leading-snug flex-grow">Access academic transcripts, digital lending logs, and research repository permissions for all active students.</p>
+            </a>
+            
+            <a onclick="location.href='edashboard.html'" class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-primary transition-all flex flex-col h-full shadow-sm hover:shadow-md" href="#">
+                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                    <span class="material-symbols-outlined text-primary text-xl group-hover:text-white" data-icon="badge">badge</span>
+                </div>
+                <h2 class="text-lg font-headline font-bold text-on-background mb-2">Employee Dashboard</h2>
+                <p class="text-on-surface-variant/80 text-sm leading-snug flex-grow">Manage librarian credentials, staff schedules, and internal administrative protocols.</p>
+            </a>
+            
+            <a class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant hover:border-error transition-all flex flex-col h-full shadow-sm hover:shadow-md" href="admin.html">
+                <div class="w-10 h-10 bg-error/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-error transition-colors">
+                    <span class="material-symbols-outlined text-error text-xl group-hover:text-white" data-icon="logout">logout</span>
+                </div>
+                <h2 class="text-lg font-headline font-bold text-on-background mb-2">Logout</h2>
+                <p class="text-on-surface-variant/80 text-sm leading-snug flex-grow">Securely terminate your administrative access to the Academic Vault.</p>
+            </a>
+        </div>
+        <div class="mt-12 flex flex-wrap justify-center gap-6 text-[10px] font-label font-bold text-on-surface-variant/40 uppercase tracking-widest">
+            <div class="flex items-center gap-2">
+                <br/>
+            </div>
+            <div class="flex items-center gap-1.5"></div>
+            <div class=""><br/></div>
+        </div>
+    </main>
+</body>
+</html>
