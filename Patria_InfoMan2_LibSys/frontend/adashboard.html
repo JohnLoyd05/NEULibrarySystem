@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>NEU Library Admin - Dashboard Overview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#1152d4",
+                        "on-primary-container": "#1e40af",
+                        "surface-variant": "#f1f5f9",
+                        "primary": "#1152d4",
+                        "error-container": "#fee2e2",
+                        "secondary": "#475569",
+                        "tertiary": "#0f172a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#d9dae3",
+                        "on-surface": "#0f172a",
+                        "surface-container-low": "#f0f1f5",
+                        "error": "#ef4444",
+                        "outline": "#cbd5e1",
+                        "on-tertiary-container": "#f8fafc",
+                        "secondary-fixed-dim": "#e2e8f0",
+                        "on-primary-fixed-variant": "#1d4ed8",
+                        "on-secondary-fixed": "#0f172a",
+                        "primary-fixed-dim": "#bfdbfe",
+                        "inverse-on-surface": "#f1f5f9",
+                        "on-secondary-container": "#1e293b",
+                        "outline-variant": "#e2e8f0",
+                        "on-tertiary-fixed-variant": "#1e293b",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e1e2e9",
+                        "on-primary-fixed": "#1e3a8a",
+                        "inverse-primary": "#93c5fd",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#991b1b",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e2e8f0",
+                        "surface-container": "#e8e9ef",
+                        "surface-bright": "#ffffff",
+                        "on-tertiary-fixed": "#020617",
+                        "on-secondary-fixed-variant": "#334155",
+                        "background": "#f6f6f8",
+                        "on-background": "#0f172a",
+                        "surface-dim": "#d9d9e4",
+                        "tertiary-fixed-dim": "#cbd5e1",
+                        "tertiary-container": "#334155",
+                        "on-surface-variant": "#475569",
+                        "inverse-surface": "#1e293b",
+                        "secondary-container": "#f1f5f9",
+                        "primary-fixed": "#dbeafe",
+                        "primary-container": "#dbeafe",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f6f6f8",
+                        "secondary-fixed": "#f1f5f9"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen">
+    <aside class="w-64 bg-surface-container-lowest border-r border-outline-variant flex flex-col fixed h-full z-20">
+        <div class="p-4 flex flex-col gap-1 border-b border-outline-variant">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary text-xl">school</span>
+                </div>
+                <div>
+                    <h1 class="text-xs font-bold text-on-surface leading-tight">NEU Library Admin</h1>
+                </div>
+            </div>
+        </div>
+        <nav class="px-2 pt-4 pb-2 space-y-1">
+            <a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary transition-colors cursor-default" href="#">
+                <span class="material-symbols-outlined text-xl">dashboard</span>
+                <span class="text-xs font-bold">Dashboard Overview</span>
+            </a>
+            <a onclick="location.href='visitlogs.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-xl">list_alt</span>
+                <span class="text-xs font-medium">Detailed Visit Logs</span>
+            </a>
+            <a onclick="location.href='adminlogs.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-xl">admin_panel_settings</span>
+                <span class="text-xs font-medium">Admin Logs</span>
+            </a>
+        </nav>
+        
+        <div class="flex-1"></div>
+        <div class="px-4 py-2 border-t border-outline-variant">
+            <a onclick="location.href='admin.html'" class="flex items-center gap-3 px-3 py-2 rounded-lg text-error hover:bg-error-container transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-xl">logout</span>
+                <span class="text-xs font-medium">Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="flex-1 ml-64 flex flex-col">
+        <header class="h-16 bg-surface-bright border-b border-outline-variant px-8 flex items-center justify-between sticky top-0 z-10">
+            <div class="flex items-center gap-4">
+                <h2 class="text-lg font-bold text-on-surface uppercase tracking-tight">Library Visitor Dashboard</h2>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <span class="text-sm font-semibold text-on-surface">Admin</span>
+                </div>
+                <div class="bg-primary/10 rounded-full size-10 flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary">account_circle</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="p-8 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant shadow-sm h-48 flex flex-col justify-between group">
+                    <div>
+                        <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">Total Visits Today</p>
+                        <h3 id="today-stats" class="text-5xl font-black text-on-surface tracking-tighter">0</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold text-primary cursor-default opacity-70">Daily Metric</span>
+                        <span class="material-symbols-outlined text-primary/20 text-4xl">today</span>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant shadow-sm h-48 flex flex-col justify-between group">
+                    <div>
+                        <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">Total Visits This Month</p>
+                        <h3 id="month-stats" class="text-5xl font-black text-on-surface tracking-tighter">0</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold text-primary cursor-default opacity-70">Monthly Metric</span>
+                        <span class="material-symbols-outlined text-primary/20 text-4xl">calendar_month</span>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant shadow-sm h-48 flex flex-col justify-between group relative">
+                    <div>
+                        <div class="flex justify-between items-start">
+                            <p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-2">Custom Range Visits</p>
+                        </div>
+                        <div class="flex items-center gap-2 mt-1 mb-2">
+                            <input id="startDateInput" class="w-full text-[10px] border-outline-variant rounded p-1 bg-surface-container-low focus:ring-primary focus:border-primary" type="date" title="Start Date">
+                            <span class="text-xs text-on-surface-variant font-bold">-</span>
+                            <input id="endDateInput" class="w-full text-[10px] border-outline-variant rounded p-1 bg-surface-container-low focus:ring-primary focus:border-primary" type="date" title="End Date">
+                        </div>
+                        <h3 id="custom-stats" class="text-4xl font-black text-on-surface tracking-tighter">0</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold text-primary cursor-default opacity-70">Total by Default</span>
+                        <span class="material-symbols-outlined text-primary/20 text-4xl">date_range</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-surface-container-lowest border border-outline-variant p-6 rounded-2xl shadow-sm flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-bold text-on-surface">Detailed Visitor Logs</h3>
+                    <p class="text-sm text-on-surface-variant">Search, filter, and review specific employee and student visitor records.</p>
+                </div>
+                <button onclick="location.href='visitlogs.html'" class="px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 flex items-center gap-2">
+                    View Logs <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+            </div>
+            
+        </div>
+    </main>
+
+<script>
+    const EMPLOYEE_API_URL = 'http://localhost:8080/api/employee-visits';
+    const STUDENT_API_URL = 'http://localhost:8080/api/visits'; 
+    let allVisitsData = []; 
+
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchVisits();
+        setInterval(fetchVisits, 10000);
+
+        document.getElementById('startDateInput').addEventListener('change', calculateDateRange);
+        document.getElementById('endDateInput').addEventListener('change', calculateDateRange);
+    });
+
+    async function fetchVisits() {
+        try {
+            const [employeeRes, studentRes] = await Promise.all([
+                fetch(EMPLOYEE_API_URL).catch(() => null),
+                fetch(STUDENT_API_URL).catch(() => null)
+            ]);
+
+            let employeeData = [];
+            let studentData = [];
+
+            if (employeeRes && employeeRes.ok) employeeData = await employeeRes.json();
+            if (studentRes && studentRes.ok) studentData = await studentRes.json();
+
+            allVisitsData = [...employeeData, ...studentData];
+            updateStats(allVisitsData);
+            
+        } catch (error) {
+            console.error('Fetch Error:', error);
+        }
+    }
+
+    function updateStats(visits) {
+        const now = new Date();
+        const localTodayStr = now.toLocaleDateString('en-CA'); 
+        const currentYear = now.getFullYear();
+        const currentMonth = now.getMonth();
+
+        let todayCount = 0;
+        let monthCount = 0;
+
+        visits.forEach(v => {
+            if (v.visitDate === localTodayStr) {
+                todayCount++;
+            }
+            if (v.visitDate) {
+                const [year, month, day] = v.visitDate.split('-');
+                if (year && month && day) {
+                    if (parseInt(year) === currentYear && parseInt(month) - 1 === currentMonth) {
+                        monthCount++;
+                    }
+                }
+            }
+        });
+        
+        document.getElementById('today-stats').textContent = todayCount;
+        document.getElementById('month-stats').textContent = monthCount;
+
+        calculateDateRange();
+    }
+
+    function calculateDateRange() {
+        const startDateStr = document.getElementById('startDateInput').value;
+        const endDateStr = document.getElementById('endDateInput').value;
+
+        if (!startDateStr && !endDateStr) {
+            document.getElementById('custom-stats').textContent = allVisitsData.length;
+            return;
+        }
+
+        let customCount = 0;
+        
+        const startTimestamp = startDateStr ? new Date(startDateStr).getTime() : new Date('1900-01-01').getTime();
+        const endTimestamp = endDateStr ? new Date(endDateStr).getTime() : new Date('2100-01-01').getTime();
+
+        allVisitsData.forEach(visit => {
+            if (visit.visitDate) {
+                const visitTimestamp = new Date(visit.visitDate).getTime();
+                
+                if (!isNaN(visitTimestamp) && visitTimestamp >= startTimestamp && visitTimestamp <= endTimestamp) {
+                    customCount++;
+                }
+            }
+        });
+
+        document.getElementById('custom-stats').textContent = customCount;
+    }
+</script>
+</body>
+</html>
