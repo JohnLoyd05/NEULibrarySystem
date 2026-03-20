@@ -11,7 +11,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/admin-logs")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+        "http://unilibsysjlp05.infinityfreeapp.com",
+        "https://unilibsysjlp05.infinityfreeapp.com",
+        "http://localhost:5500",
+        "http://localhost:8080"
+})
 public class AdminLogController {
 
     @Autowired
