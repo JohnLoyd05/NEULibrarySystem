@@ -1,1 +1,7 @@
 unilibsysjlp05.infinityfreeapp.com
+
+---Note: In the information form, after clicking enter, 
+please wait for at least 60 seconds as the backend server is starting to wake up. 
+The reason for this is because I used the free tier for my backend server and 
+if nobody visits the website for 15 minutes, the server will put the Java backend to "sleep" to save energy.
+
