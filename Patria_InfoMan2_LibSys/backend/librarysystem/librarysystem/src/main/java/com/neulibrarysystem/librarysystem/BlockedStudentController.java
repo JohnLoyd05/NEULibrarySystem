@@ -7,7 +7,12 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/students")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {
+        "http://unilibsysjlp05.infinityfreeapp.com",
+        "https://unilibsysjlp05.infinityfreeapp.com",
+        "http://localhost:5500",
+        "http://localhost:8080"
+})
 public class BlockedStudentController {
 
     @Autowired
